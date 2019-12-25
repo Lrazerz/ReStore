@@ -1,0 +1,16 @@
+@font-face {
+    src: url("../src/fonts/merriweather-regular.ttf") format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width:70%;
+    margin:auto;
+    font-family: 'Merriweather', serif;
+    font-size: 1.2vw;
+    font-weight: 500;
+}

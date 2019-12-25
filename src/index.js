@@ -1,12 +1,31 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import ReactDOM from 'react-dom'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import {Provider} from 'react-redux';
+import {BrowserRouter as Router} from "react-router-dom";
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+import App from "./components/app";
+import ErrorBoundary from "./components/error-boundary";
+import BookstoreService from './services/bookstore-service';
+import {BookstoreServiceProvider} from "./components/bookstore-service-context";
+
+import store from "./store";
+
+import './fonts/Merriweather-Regular.ttf'
+
+const bookstoreService = new BookstoreService();
+
+
+
+ReactDOM.render(
+    <Provider store={store}>
+        <ErrorBoundary>
+            <BookstoreServiceProvider value={bookstoreService}>
+                <Router>
+                    <App />
+                </Router>
+            </BookstoreServiceProvider>
+        </ErrorBoundary>
+    </Provider>,
+    document.getElementById('root'));
+

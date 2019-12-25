@@ -1,0 +1,41 @@
+.spinner-container{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:transparent;
+}
+.loader{
+    width:100px;
+    height:100px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:10px 20px;
+}
+@keyframes load{
+    50%{
+        transform:rotatez(180deg) scale(0.5);
+        border-color:orange;
+    }
+    100%{
+        transform:rotatez(360deg) scale(1.1);
+    }
+}
+
+@keyframes load7{
+    100%{
+        transform:rotatez(360deg);
+    }
+}
+.loader7::before{
+    content:"";
+    color:white;
+    height:50px;
+    width:50px;
+    background:transparent;
+    border-radius:50%;
+    border:10px solid blue;
+    border-color:#026cac #0277BD #0264a2 #0278bc;
+    animation:load7 .6s infinite ease-in-out;
+    box-shadow:0px 0px 40px -2px skyblue;
+}
