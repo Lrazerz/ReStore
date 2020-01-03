@@ -1,9 +1,9 @@
 import React from 'react';
 import ShoppingCartTable from '../shopping-cart-table';
 
-const CartPage = () => {
+const CartPage = ({orderTotal}) => {
     return (
-        <ShoppingCartTable/>
+        <ShoppingCartTable orderTotal={orderTotal}/>
     )
 };
 
